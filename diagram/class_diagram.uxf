@@ -1,0 +1,26 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>210</x><y>280</y><w>310</w><h>200</h></coordinates><panel_attributes>&lt;&lt;ViewModel&gt;&gt;
+CheckBoxViewModel
+--
+-is_checked_: boolean
+-text_: winrt::hstring
+-property_changed_: winrt::event
+--
++CheckBoxViewModel()
++IsChecked(val: boolean) 
++IsChecked(): boolean
++Text(): winrt::hstring
++UpdateText()
++PropertyChanged(PropertyChangedEventHandler)
++PropertyChanged(winrt::event_token)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>180</y><w>110</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m2=1 view_model_</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>UMLClass</id><coordinates><x>210</x><y>80</y><w>310</w><h>110</h></coordinates><panel_attributes>&lt;&lt;View&gt;&gt;
+MainWindow
+--
+
+--
++MainWindow()
++myButtonClick(IInspectable, RoutedEventArgs)
+
+
+</panel_attributes><additional_attributes></additional_attributes></element></diagram>
