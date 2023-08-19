@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation and Contributors.
 // Licensed under the MIT License.
 
+import "CheckBoxViewModel.idl";
+
 namespace TwoWayViewModel
 {
     [default_interface]
@@ -8,5 +10,6 @@ namespace TwoWayViewModel
     {
         MainWindow();
         Int32 MyProperty;
+        CheckBoxViewModel ViewModel{ get; };
     }
 }

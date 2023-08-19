@@ -32,4 +32,26 @@ namespace winrt::TwoWayViewModel::implementation
     void CheckBoxViewModel::myButton_Click(IInspectable const&, RoutedEventArgs const&)
     {
     }
+
+    void CheckBoxViewModel::UpdateText() {
+
+        if (is_checked_) {
+            text_ = L"Checked!";
+        }
+        else
+        {
+            text_ = L"Unchecked...";
+        }
+
+        property_changed_(*this, Data::PropertyChangedEventArgs{ L"Text" });
+        return;
+    }
+
+    winrt::event_token CheckBoxViewModel::PropertyChanged(Data::PropertyChangedEventHandler const& handler) {
+        return property_changed_.add(handler);
+    }
+
+    void CheckBoxViewModel::PropertyChanged(winrt::event_token const& token) noexcept {
+        property_changed_.remove(token);
+    }
 }

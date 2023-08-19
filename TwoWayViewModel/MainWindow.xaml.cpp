@@ -18,6 +18,7 @@ namespace winrt::TwoWayViewModel::implementation
     MainWindow::MainWindow()
     {
         InitializeComponent();
+        view_model_ = winrt::make<CheckBoxViewModel>();
     }
 
     int32_t MainWindow::MyProperty()
@@ -30,8 +31,13 @@ namespace winrt::TwoWayViewModel::implementation
         throw hresult_not_implemented();
     }
 
+    TwoWayViewModel::CheckBoxViewModel MainWindow::ViewModel() {
+        return view_model_;
+    }
+
     void MainWindow::myButton_Click(IInspectable const&, RoutedEventArgs const&)
     {
-        myButton().Content(box_value(L"Clicked"));
+        //myButton().Content(box_value(L"Clicked"));
+        view_model_.UpdateText();
     }
 }

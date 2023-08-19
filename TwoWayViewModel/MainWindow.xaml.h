@@ -4,6 +4,7 @@
 #pragma once
 
 #include "MainWindow.g.h"
+#include "CheckBoxViewModel.xaml.h"
 
 namespace winrt::TwoWayViewModel::implementation
 {
@@ -14,7 +15,12 @@ namespace winrt::TwoWayViewModel::implementation
         int32_t MyProperty();
         void MyProperty(int32_t value);
 
+        TwoWayViewModel::CheckBoxViewModel ViewModel();
+
         void myButton_Click(Windows::Foundation::IInspectable const& sender, Microsoft::UI::Xaml::RoutedEventArgs const& args);
+
+    private:
+        TwoWayViewModel::CheckBoxViewModel view_model_{ nullptr };
     };
 }
 

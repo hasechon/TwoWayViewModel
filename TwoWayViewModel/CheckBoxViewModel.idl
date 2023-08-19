@@ -3,10 +3,13 @@
 
 namespace TwoWayViewModel
 {
-    [default_interface]
-    runtimeclass CheckBoxViewModel 
+    [Microsoft.UI.Xaml.Data.Bindable]
+    runtimeclass CheckBoxViewModel : Microsoft.UI.Xaml.Data.INotifyPropertyChanged
     {
         CheckBoxViewModel();
         Int32 MyProperty;
+        Boolean IsChecked;
+        String Text{ get; };
+        void UpdateText();
     }
 }
